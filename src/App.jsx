@@ -10,7 +10,7 @@ function App() {
     <div>
       <>
         <Navbar />
-        <h1>hola</h1>
+        <h1>hola como estás?</h1>
         <button onClick={functionSaludar}>Saludar</button>
         <Footer></Footer>
       </>
