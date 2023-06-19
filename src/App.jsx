@@ -1,20 +1,22 @@
-import Navbar from "./NavBar";
-import Footer from "./Footer";
+import { useState } from "react";
+import Home from "./components/page/home/home";
+import ItemList from "./components/page/itemList/ItemList";
 
 function App() {
-  const functionSaludar = () => {
-    console.log("Hola ");
+  const [saludo, setSaludo] = useState("Saludo inicial");
+
+  const cambiarSaludo = (newSaludo) => {
+    setSaludo(newSaludo);
   };
 
   return (
-    <div>
-      <>
-        <Navbar />
-        <h1>hola como estás?</h1>
-        <button onClick={functionSaludar}>Saludar</button>
-        <Footer></Footer>
-      </>
-    </div>
+    <>
+      <p>
+        El saludo es <b>{saludo}</b>
+      </p>
+      <Home x={"juancito"} y={true} />
+      <ItemList saludo={saludo} cambiarSaludo={cambiarSaludo} />
+    </>
   );
 }
 
