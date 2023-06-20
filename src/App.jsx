@@ -1,21 +1,13 @@
-import { useState } from "react";
-import Home from "./components/page/home/home";
-import ItemList from "./components/page/itemList/ItemList";
+import ComponentsMui from "./components/page/mui/ComponentsMui";
+import ProbandoMui from "./components/page/mui/ProbandoMui";
 
 function App() {
-  const [saludo, setSaludo] = useState("Saludo inicial");
-
-  const cambiarSaludo = (newSaludo) => {
-    setSaludo(newSaludo);
-  };
 
   return (
     <>
-      <p>
-        El saludo es <b>{saludo}</b>
-      </p>
-      <Home x={"juancito"} y={true} />
-      <ItemList saludo={saludo} cambiarSaludo={cambiarSaludo} />
+      <ProbandoMui />
+      <hr/>
+      <ComponentsMui />
     </>
   );
 }
