@@ -1,13 +1,12 @@
-import ComponentsMui from "./components/page/mui/ComponentsMui";
-import ProbandoMui from "./components/page/mui/ProbandoMui";
+import ItemListContainer from "./components/page/itemList/ItemListContainer";
+import NavBar from "./components/page/navbar/NavBar";
 
 function App() {
 
   return (
     <>
-      <ProbandoMui />
-      <hr/>
-      <ComponentsMui />
+      <NavBar/>
+      <ItemListContainer greeting={"Cuauhtemoc Medina"}/>
     </>
   );
 }
