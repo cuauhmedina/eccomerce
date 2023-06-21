@@ -10,8 +10,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import { useState } from "react";
 import { Badge } from "@mui/material";
 
@@ -48,7 +48,9 @@ const NavBar = () => {
       <Container maxWidth="xl">
         <Toolbar>
           {/* ICONO*/}
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <SportsMotorsportsIcon
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+          />
 
           {/* TITULO*/}
           <Typography
@@ -108,7 +110,9 @@ const NavBar = () => {
           </Box>
 
           {/* ICONO TABLE */}
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <SportsMotorsportsIcon
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+          />
           {/* TITULO TABLET*/}
           <Typography
             variant="h5"
@@ -147,7 +151,13 @@ const NavBar = () => {
           </Box>
 
           <IconButton size="large">
-            <Badge size="large" badgeContent={9} color="primary" style={{ color: "#FAD02C" }} sx={{ mx: 2 }}>
+            <Badge
+              size="large"
+              badgeContent={9}
+              color="primary"
+              style={{ color: "#FAD02C" }}
+              sx={{ mx: 2 }}
+            >
               <ShoppingCartIcon />
             </Badge>
           </IconButton>
