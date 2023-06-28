@@ -1,13 +1,9 @@
-import ComponentsMui from "./components/page/mui/ComponentsMui";
-import ProbandoMui from "./components/page/mui/ProbandoMui";
+import ItemListContainer from "./components/page/itemList/ItemListContainer";
 
 function App() {
-
   return (
     <>
-      <ProbandoMui />
-      <hr/>
-      <ComponentsMui />
+      <ItemListContainer />
     </>
   );
 }

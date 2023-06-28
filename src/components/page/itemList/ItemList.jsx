@@ -1,15 +1,16 @@
-const ItemList = ({ cambiarSaludo }) => {
+import CounterContainer from "../../common/counter/CounterContainer";
+
+const ItemList = ({ edad }) => {
   return (
     <>
-      <hr />
-
-      <button
-        onClick={() => {
-          cambiarSaludo("Nuevo Saludo");
-        }}
-      >
-        Cambiar Saludo
-      </button>
+      <div>
+        <h1>Aca van los productos</h1>
+        <button onClick={() => setItems([...items, {}])}>
+          Traer productos
+        </button>
+        <h3>Edad es {edad}</h3>
+        <CounterContainer stock={7} />
+      </div>
     </>
   );
 };
