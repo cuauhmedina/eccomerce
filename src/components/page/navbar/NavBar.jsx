@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -10,10 +11,8 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
-import { useState } from "react";
-import { Badge } from "@mui/material";
+import CartWidget from "../../common/cartWidget/CartWidget";
 
 /**
  *
@@ -150,17 +149,7 @@ const NavBar = () => {
             ))}
           </Box>
 
-          <IconButton size="large">
-            <Badge
-              size="large"
-              badgeContent={9}
-              color="primary"
-              style={{ color: "#FAD02C" }}
-              sx={{ mx: 2 }}
-            >
-              <ShoppingCartIcon />
-            </Badge>
-          </IconButton>
+          <CartWidget counter="7" />
 
           {/* LOGO DE USUARIO */}
           <Box sx={{ flexGrow: 0 }}>
