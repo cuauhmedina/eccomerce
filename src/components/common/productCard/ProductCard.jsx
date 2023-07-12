@@ -3,15 +3,16 @@ import { Link } from "react-router-dom";
 
 const ProductCard = ({ elemento, isInItemList = true }) => {
   return (
-    <Card sx={{ width: 400 }}>
+    <Card sx={{ width: 380, padding: "10px" }}>
+      <CardMedia component="img" alt="green iguana" height="180" image={elemento.img} />
       <CardContent>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography gutterBottom variant="h4" component="div" sx={{ textAlign: "center" }}>
           {elemento.title}
         </Typography>
       </CardContent>
-      <CardMedia component="img" alt="green iguana" height="180" image={elemento.img} />
       <CardContent>
         <Typography variant="body1">{elemento.description}</Typography>
+        <p>Price {elemento.price}</p>
       </CardContent>
       <CardActions>
         <Link to={`/itemDetail/${elemento.id}`}>

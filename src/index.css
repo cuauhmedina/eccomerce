@@ -14,8 +14,10 @@ a {
 }
 
 footer {
-  position: fixed;
-  bottom: 20px;
+  /* position: fixed;
+  bottom: 20px; */
+  margin: 1em 0;
   width: 100%;
   text-align: center;
+  position: sticky;
 }
