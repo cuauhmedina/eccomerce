@@ -13,11 +13,9 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import CartWidget from "../../common/cartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
-/**
- *
- */
-const paginas = ["Comprar", "Promociones", "Lo Nuevo", "Moto Outlet"];
+const paginas = ["all", "helmets", "gloves", "jackets"];
 const settings = ["Perfil", "Mi Cuenta", "Mis compras", "Salir"];
 
 const NavBar = () => {
@@ -40,23 +38,20 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar
-      position="static"
-      style={{ backgroundColor: "#333652", color: "#FAD02C" }}
-    >
+    <AppBar position="static" style={{ backgroundColor: "#333652", color: "#FAD02C" }}>
       <Container maxWidth="xl">
         <Toolbar>
           {/* ICONO*/}
-          <SportsMotorsportsIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
+          <Link to="/">
+            <SportsMotorsportsIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          </Link>
 
           {/* TITULO*/}
           <Typography
             variant="h5"
             noWrap
             component="a"
-            href="/"
+            href="#"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -109,14 +104,14 @@ const NavBar = () => {
           </Box>
 
           {/* ICONO TABLE */}
-          <SportsMotorsportsIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-          />
+          <Link to="/">
+            <SportsMotorsportsIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          </Link>
           {/* TITULO TABLET*/}
           <Typography
             variant="h5"
             noWrap
-            component="a"
+            component="span"
             href=""
             sx={{
               mr: 2,
@@ -139,13 +134,15 @@ const NavBar = () => {
             }}
           >
             {paginas.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, mx: 1, color: "#E9EAEC", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link to={`/category/${page}`} key={page}>
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, mx: 1, color: "#E9EAEC", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </Box>
 
@@ -155,10 +152,7 @@ const NavBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="My Configuración">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar
-                  alt="Cuauhtemoc Medina"
-                  src="/static/images/avatar/2.jpg"
-                />
+                <Avatar alt="Cuauhtemoc Medina" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
             <Menu

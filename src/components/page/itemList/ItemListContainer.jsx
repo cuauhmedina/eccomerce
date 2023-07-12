@@ -1,36 +1,25 @@
-// import { LinearProgress, Container, Stack } from "@mui/material";
-import { Container, LinearProgress, Stack } from "@mui/material";
 import "./ItemListContainer.css";
+import { useState, useEffect } from "react";
+import { products } from "../../../productsMock";
+import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
-const ItemListContainer = ({ greeting }) => {
-  return (
-    <>
-      <Container maxWidth="lg" sx={{ my: 5 }}>
-        <h1>
-          Bienvenido <i>{greeting}</i>
-        </h1>
-        <p>
-          Este es un mensaje de bienvenida personalizado con{" "}
-          <b>
-            <i>props</i>
-          </b>
-          , el nombre se pasó desde el <b>App.jsx</b> al componente{" "}
-          <b>ItemListContainer.jsx</b>
-        </p>
-        <p>
-          Los estilos que se ven en este componente están en un .css integrado
-          solo al componente{" "}
-        </p>
-        <p>
-          La página sigue en construcción, asi que disfruta de mientras de esta
-          barra de carga infinita
-        </p>
-        <Stack sx={{ width: "90%", color: "grey.500", my: 5 }}>
-          <LinearProgress />
-        </Stack>
-      </Container>
-    </>
-  );
+const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const [error, setError] = useState({});
+
+  const { categoryName } = useParams();
+  useEffect(() => {
+    let filtered = products.filter((elemento) => elemento.category === categoryName);
+    const tarea = new Promise((resolve, reject) => {
+      resolve(categoryName === undefined || categoryName == "all" ? products : filtered);
+      //   reject({message: "No autorizado", status: 401})
+    });
+
+    tarea.then((respuesta) => setItems(respuesta)).catch((error) => setError(error));
+  }, [categoryName]);
+
+  return <ItemList items={items} />;
 };
 
 export default ItemListContainer;
