@@ -38,7 +38,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: "#333652", color: "#FAD02C" }}>
+    <AppBar position="sticky" style={{ backgroundColor: "#333652", color: "#FAD02C" }}>
       <Container maxWidth="xl">
         <Toolbar>
           {/* ICONO*/}

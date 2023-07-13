@@ -1,7 +1,7 @@
 const CartContainer = () => {
   return (
     <div>
-      <h1>Carritoooo</h1>
+      <h1 style={{ textAlign: "center" }}>Placeholder for the shopping cart</h1>
     </div>
   );
 };

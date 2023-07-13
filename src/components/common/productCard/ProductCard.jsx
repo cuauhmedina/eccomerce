@@ -11,12 +11,18 @@ const ProductCard = ({ elemento, isInItemList = true }) => {
         </Typography>
       </CardContent>
       <CardContent>
-        <Typography variant="body1">{elemento.description}</Typography>
-        <p>Price {elemento.price}</p>
+        <Typography variant="body1" sx={{ fontWeight: "600" }}>
+          {elemento.description}
+        </Typography>
+        <p>
+          Price <b>{elemento.price}</b>
+        </p>
       </CardContent>
       <CardActions>
-        <Link to={`/itemDetail/${elemento.id}`}>
-          <Button size="medium">Ver detalle</Button>
+        <Link style={{ margin: "5px auto" }} to={`/itemDetail/${elemento.id}`}>
+          <Button variant="contained" size="large">
+            See more
+          </Button>
         </Link>
       </CardActions>
     </Card>
