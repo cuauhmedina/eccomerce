@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import CounterContainer from "../../common/counter/CounterContainer";
-
-const ItemDetail = () => {
-  return (
-    <div>
-      <h3>Nombre del producot</h3>
-      <h4>imagen del producto</h4>
-
-      <CounterContainer stock={5} />
-    </div>
-=======
 import { useEffect, useState } from "react";
 import { products } from "../../../productsMock";
 import { useParams } from "react-router-dom";
@@ -97,7 +85,6 @@ const ItemDetail = () => {
         </Grid>
       </Grid>
     </Container>
->>>>>>> PreEntrega2_Cuauhtemoc_Medina
   );
 };
 

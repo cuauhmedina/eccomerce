@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import ItemList from "./ItemList";
-
-const ItemListContainer = () => {
-  return <ItemList />;
-=======
 import "./ItemListContainer.css";
 import { useState, useEffect } from "react";
 import { products } from "../../../productsMock";
@@ -26,7 +20,6 @@ const ItemListContainer = () => {
   }, [categoryName]);
 
   return <ItemList items={items} />;
->>>>>>> PreEntrega2_Cuauhtemoc_Medina
 };
 
 export default ItemListContainer;

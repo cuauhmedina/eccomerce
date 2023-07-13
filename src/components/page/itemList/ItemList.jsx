@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import CounterContainer from "../../common/counter/CounterContainer";
-
-const ItemList = ({ edad }) => {
-  return (
-    <>
-      <div>
-        <h1>Aca van los productos</h1>
-        <button onClick={() => setItems([...items, {}])}>
-          Traer productos
-        </button>
-        <h3>Edad es {edad}</h3>
-        <CounterContainer stock={7} />
-      </div>
-    </>
-=======
 import { useParams } from "react-router-dom";
 import ProductCard from "../../common/productCard/ProductCard";
 import { Typography } from "@mui/material";
@@ -48,7 +32,6 @@ const ItemList = ({ items }) => {
         })}
       </div>
     </div>
->>>>>>> PreEntrega2_Cuauhtemoc_Medina
   );
 };
 

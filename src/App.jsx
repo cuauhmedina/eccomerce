@@ -1,12 +1,4 @@
 import ItemListContainer from "./components/page/itemList/ItemListContainer";
-<<<<<<< HEAD
-
-function App() {
-  return (
-    <>
-      <ItemListContainer />
-    </>
-=======
 import Layout from "./components/layout/Layout";
 import ItemDetail from "./components/page/itemDetail/ItemDetail";
 import CartContainer from "./components/page/cart/CartContainer";
@@ -26,7 +18,6 @@ function App() {
         <Route path="*" element={<h1>404 not found</h1>} />
       </Routes>
     </BrowserRouter>
->>>>>>> PreEntrega2_Cuauhtemoc_Medina
   );
 }
 
