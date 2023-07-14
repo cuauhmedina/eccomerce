@@ -13,14 +13,15 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import CartWidget from "../../common/cartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const paginas = ["all", "helmets", "gloves", "jackets"];
+const paginas = ["helmets", "gloves", "jackets"];
 const settings = ["Perfil", "Mi Cuenta", "Mis compras", "Salir"];
 
 const NavBar = () => {
   const [linksNav, setLinksNav] = useState(null);
   const [linkUsuario, setLinkUsuario] = useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setLinksNav(event.currentTarget);
@@ -51,7 +52,7 @@ const NavBar = () => {
             variant="h5"
             noWrap
             component="a"
-            href="#"
+            href=""
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -59,6 +60,10 @@ const NavBar = () => {
               fontWeight: 900,
               color: "inherit",
               textDecoration: "none",
+            }}
+            onClick={(event) => {
+              event.preventDefault();
+              navigate("/");
             }}
           >
             Super Cuauh Merch
@@ -111,8 +116,12 @@ const NavBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="span"
+            component="a"
             href=""
+            onClick={() => {
+              event.preventDefault();
+              navigate("/");
+            }}
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },

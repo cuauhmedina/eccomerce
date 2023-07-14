@@ -12,7 +12,7 @@ const ItemListContainer = () => {
   useEffect(() => {
     let filtered = products.filter((elemento) => elemento.category === categoryName);
     const tarea = new Promise((resolve, reject) => {
-      resolve(categoryName === undefined || categoryName == "all" ? products : filtered);
+      resolve(categoryName === undefined ? products : filtered);
       //   reject({message: "No autorizado", status: 401})
     });
 

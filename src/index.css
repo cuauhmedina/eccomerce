@@ -21,3 +21,7 @@ footer {
   text-align: center;
   position: sticky;
 }
+
+form input{
+  margin: 1em;
+}

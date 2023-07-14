@@ -5,20 +5,13 @@ import CounterContainer from "../../common/counter/CounterContainer";
 import Grid from "@mui/material/Unstable_Grid2";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-import {
-  Alert,
-  Button,
-  Container,
-  InputLabel,
-  MenuItem,
-  Rating,
-  Select,
-  Typography,
-} from "@mui/material";
+import Select from "@mui/material/Select";
+
+import { Alert, Button, Container, InputLabel, MenuItem, Rating, Typography } from "@mui/material";
 
 const ItemDetail = () => {
   const [producto, setProducto] = useState({});
-  const [quantity, setQuantity] = useState({});
+  const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
 
   useEffect(() => {
@@ -27,12 +20,10 @@ const ItemDetail = () => {
       res(selected);
     });
     tarea.then((res) => setProducto(res));
-    setQuantity(1);
   }, [id]);
 
-  const onAdd = (cantidad) => {
-    console.log(producto);
-    console.log(cantidad);
+  const handleChangeQty = (event) => {
+    setQuantity(event.target.value);
   };
 
   return (
@@ -49,7 +40,7 @@ const ItemDetail = () => {
         <Grid xs={5}>
           <Paper elevation={6} sx={{ padding: "1em", minHeight: "400px" }}>
             <Typography variant="h3">{producto.title}</Typography>
-            <Rating name="half-rating-read" defaultValue={2.5} precision={0.5} readOnly />
+            <Rating name="half-rating-read" precision={0.5} value={producto.rank ?? 0} readOnly />
             <Typography variant="h4">$ {producto.price}</Typography>
             <Typography variant="body1" sx={{ fontWeight: "600" }}>
               {producto.description}
@@ -62,9 +53,7 @@ const ItemDetail = () => {
               id="demo-simple-select"
               value={quantity}
               label="Age"
-              onChange={() => {
-                console.log("changed");
-              }}
+              onChange={handleChangeQty}
             >
               <MenuItem selected value={1}>
                 1

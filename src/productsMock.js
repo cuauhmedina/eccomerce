@@ -7,6 +7,7 @@ export let products = [
     description: "Casco integral nolan n-08",
     category: "helmets",
     img: "https://res.cloudinary.com/duyywqqh3/image/upload/v1687916329/supercuauh/nolan-n-80.jpg",
+    rank: 5,
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export let products = [
     description: "Casco Scorpion AT-950, snow version with pinlock",
     category: "helmets",
     img: "https://res.cloudinary.com/duyywqqh3/image/upload/v1687916480/supercuauh/scorpion.jpg",
+    rank: 4,
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export let products = [
     description: "Fox Gloves motorcycle leather brown",
     category: "gloves",
     img: "https://res.cloudinary.com/duyywqqh3/image/upload/v1687916674/supercuauh/fox.jpg",
+    rank: 3,
   },
   {
     id: 4,
@@ -35,6 +38,7 @@ export let products = [
       "Tácticos para Hombres Mujer, Dedo Completo Nudillo Duro Guantes Tácticos Militares para Ciclismo, Motocicleta, Escalada, Senderismo, Equitación",
     category: "gloves",
     img: "https://res.cloudinary.com/duyywqqh3/image/upload/v1687916746/supercuauh/YOMYM.jpg",
+    rank: 2.5,
   },
   {
     id: 5,
@@ -45,6 +49,7 @@ export let products = [
       "Motorcycle Jacket for Men and Women Scorpion with Cordura Fabric for Enduro Motorbike Riding and Armor Foam Padding for Impact Protection, Dual Sport Motorcycle Jacket - Orange, Medium",
     category: "jackets",
     img: "https://res.cloudinary.com/duyywqqh3/image/upload/v1687916789/supercuauh/magna.jpg",
+    rank: 4.5,
   },
   {
     id: 6,
@@ -55,5 +60,6 @@ export let products = [
       "JYG Motorcycle Jacket for Men Casual Faux Leather Bomber Jacket with Removable Hood",
     category: "jackets",
     img: "https://res.cloudinary.com/duyywqqh3/image/upload/v1687916903/supercuauh/JYG.jpg",
+    rank: 3.5,
   },
 ];
