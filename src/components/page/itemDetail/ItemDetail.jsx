@@ -1,18 +1,20 @@
 import { useEffect, useState } from "react";
 import { products } from "../../../productsMock";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CounterContainer from "../../common/counter/CounterContainer";
 import Grid from "@mui/material/Unstable_Grid2";
-import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Select from "@mui/material/Select";
 
 import { Alert, Button, Container, InputLabel, MenuItem, Rating, Typography } from "@mui/material";
+import { CartContext } from "../../../context/CartContext";
 
 const ItemDetail = () => {
   const [producto, setProducto] = useState({});
   const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     let selected = products.find((elemento) => elemento.id === +id);
@@ -24,6 +26,12 @@ const ItemDetail = () => {
 
   const handleChangeQty = (event) => {
     setQuantity(event.target.value);
+  };
+
+  const addItem2Cart = () => {
+    let productCart = { ...producto, quantity: quantity };
+    addToCart(productCart);
+    navigate("/cart");
   };
 
   return (
@@ -67,7 +75,7 @@ const ItemDetail = () => {
               <MenuItem value={8}>8</MenuItem>
               <MenuItem value={9}>9</MenuItem>
             </Select>
-            <Button variant="contained" size="medium" sx={{ mx: "1em" }}>
+            <Button onClick={addItem2Cart} variant="contained" size="medium" sx={{ mx: "1em" }}>
               Add
             </Button>
           </Paper>
